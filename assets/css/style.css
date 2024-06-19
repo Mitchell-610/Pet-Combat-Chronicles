@@ -10,6 +10,16 @@ header {
 
 .contentBtn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10%;
+    align-items: center;
+}
+
+#randomizeBtn, #fightBtn, #pastBtn {
+    margin: 50px;
+}
+
+
+footer {
+
 }
