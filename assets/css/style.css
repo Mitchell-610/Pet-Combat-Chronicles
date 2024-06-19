@@ -8,18 +8,17 @@ header {
     background-color: #72c2a5;
 }
 
+footer {
+    text-align: center;
+    font-size: 150%;
+    background-color: #72c2a5;
+    color: black;
+    margin-top: 40%;
+    padding: 5px;
+}
 .contentBtn {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-#randomizeBtn, #fightBtn, #pastBtn {
-    margin: 50px;
-}
-
-
-footer {
-
+    gap: 10%;
 }
