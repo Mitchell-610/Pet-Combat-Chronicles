@@ -1,4 +1,4 @@
-* {
+html {
     background-color: #D9D0CE;
 }
 
@@ -6,4 +6,10 @@ header {
     text-align: center;
     font-size: 150%;
     background-color: #72c2a5;
+}
+
+.contentBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
 }
