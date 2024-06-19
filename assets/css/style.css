@@ -7,3 +7,12 @@ header {
     font-size: 150%;
     background-color: #72c2a5;
 }
+
+footer {
+    text-align: center;
+    font-size: 150%;
+    background-color: #72c2a5;
+    color: black;
+    margin-top: 40%;
+    padding: 5px;
+}
