@@ -4,17 +4,11 @@ const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
 
-randomBtn.addEventListener(`click`, function (event) {
-    event.preventDefault();
-
-});
-
-
+//For popup at end of battle.
 function createCard() {
     const popup = $('<div>')
         .addClass('card task-card my-3')
         .attr('data-task-id', breed);
-
     const cardHeader = $('<div>').addClass('card-header h4').text(breed.value);
     const cardBody = $('<div>').addClass('card-body');
 
@@ -27,6 +21,8 @@ function createCard() {
         .addClass('btn btn-danger close')
         .text('Close')
         
+
+        //This down needs to be tied into close card function neither of them finished.
     cardDeleteBtn.on('click', handleDeleteTask);
     if (task.dueDate && task.status !== 'done') {
         const now = dayjs();
@@ -38,8 +34,29 @@ function createCard() {
             cardDeleteBtn.addClass('border-light');
         }
     }
+
+
     cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
     taskCard.append(cardHeader, cardBody);
     return taskCard;
 
 };
+
+//To close popup at end of battle.
+function closeCard(event) {
+    event.preventDefault();
+
+    if (close === true)
+
+};
+
+//Getting random dogs.
+randomBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+
+});
+
+
+
+
+
