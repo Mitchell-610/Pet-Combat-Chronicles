@@ -11,19 +11,36 @@
 
 <body>
 
-    <head>
-        <header class="header"><a>Pet Combat Chronicles</a> 
-    </head>
-
+    <header>
+        <a>Pet Combat Chronicles</a>
+        <div id="textBox">
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Name" name="query">
+            </form>
+        </div>
+        <p>My fighter!</p>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Breed" name="query">
+            </form>
+        </div>
+    </div>
+    </header>
 
     <main>
         <div id="content">
             <section id="leftDog">
 
             </section>
+            
+            <div class="contentBtn">
+                <button id="btn randomizeBtn">Randomize</button>
 
-            <button id="btn">Fight</button>
+                <button id="btn fightBtn">Fight</button>
 
+                <button id="btn pastBtn">Past Battles</button>
+            </div>
 
             <section id="rightDog">
 
