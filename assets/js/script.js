@@ -21,6 +21,8 @@ function createCard() {
         .addClass('btn btn-danger close')
         .text('Close')
         
+
+        //This down needs to be tied into close card function neither of them finished.
     cardDeleteBtn.on('click', handleDeleteTask);
     if (task.dueDate && task.status !== 'done') {
         const now = dayjs();
@@ -32,6 +34,8 @@ function createCard() {
             cardDeleteBtn.addClass('border-light');
         }
     }
+
+
     cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
     taskCard.append(cardHeader, cardBody);
     return taskCard;
@@ -42,7 +46,7 @@ function closeCard(event) {
     event.preventDefault();
 
     if (close === true)
-        
+
 };
 
 
