@@ -4,7 +4,7 @@ const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
 
-
+//For popup at end of battle.
 function createCard() {
     const popup = $('<div>')
         .addClass('card task-card my-3')
@@ -42,6 +42,7 @@ function createCard() {
 
 };
 
+//To close popup at end of battle.
 function closeCard(event) {
     event.preventDefault();
 
@@ -49,7 +50,7 @@ function closeCard(event) {
 
 };
 
-
+//Getting random dogs.
 randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
 
