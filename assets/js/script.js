@@ -1,5 +1,5 @@
 const randomBtn = document.querySelector(`#randomizeBtn`);
-const fightBtn = document.querySelector(`#fightBtn`);
+const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
