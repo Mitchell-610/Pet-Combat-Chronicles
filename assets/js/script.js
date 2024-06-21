@@ -4,17 +4,11 @@ const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
 
-randomBtn.addEventListener(`click`, function (event) {
-    event.preventDefault();
-
-});
-
 
 function createCard() {
     const popup = $('<div>')
         .addClass('card task-card my-3')
         .attr('data-task-id', breed);
-
     const cardHeader = $('<div>').addClass('card-header h4').text(breed.value);
     const cardBody = $('<div>').addClass('card-body');
 
@@ -43,3 +37,21 @@ function createCard() {
     return taskCard;
 
 };
+
+function closeCard(event) {
+    event.preventDefault();
+
+    if (close === true)
+        
+};
+
+
+randomBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+
+});
+
+
+
+
+
