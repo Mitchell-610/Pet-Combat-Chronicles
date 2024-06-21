@@ -8,6 +8,13 @@ header {
     background-color: #72c2a5;
 }
 
+#textBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
 .search-container {
     display: flex;
 }
