@@ -13,8 +13,8 @@ function createCard() {
     const cardBody = $('<div>').addClass('card-body');
 
 
-    const cardLife = $('<p>').addClass('card-text').text(/* NEED TO CREATE CONST FOR DOGS LIFE POINTS VALUE */);
-    const cardHypo = $('<p>').addClass('card-text').text(/* CREATE CONST FOR DOGS HYPO ALLERGIES VALUE */);
+    const dogLife = $('<p>').addClass('card-text').text(/* NEED TO CREATE CONST FOR DOGS LIFE POINTS VALUE */  life.value);
+    const dogHypo = $('<p>').addClass('card-text').text(/* CREATE CONST FOR DOGS HYPO ALLERGIES VALUE */);
     const weight = $('<p>').addClass('card-text').text(/* CREATE CONST FOR WEIGHT VALUE */);
 
     const close = $('<button>')
@@ -23,7 +23,7 @@ function createCard() {
         
 
         //This down needs to be tied into close card function neither of them finished.
-    cardDeleteBtn.on('click', handleDeleteTask);
+    cardDeleteBtn.on('click', closeCard);
     if (task.dueDate && task.status !== 'done') {
         const now = dayjs();
         const taskDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
@@ -34,10 +34,8 @@ function createCard() {
             cardDeleteBtn.addClass('border-light');
         }
     }
-
-
     cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
-    taskCard.append(cardHeader, cardBody);
+    popUp.append(cardHeader, cardBody);
     return taskCard;
 
 };
@@ -46,7 +44,9 @@ function createCard() {
 function closeCard(event) {
     event.preventDefault();
 
-    if (close === true)
+    if (close === true) {
+
+    }
 
 };
 
@@ -55,8 +55,3 @@ randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
 
 });
-
-
-
-
-
