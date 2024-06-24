@@ -1,8 +1,17 @@
+
+
 const randomBtn = document.querySelector(`#randomizeBtn`);
 const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
+
+fetch("https://dogapi.dog/api/v2/breeds")
+    .then(response => response.json())
+    //.then (data => console.log(data))
+    .then (data => console.log(data.data))
+    .catch(error => console.error(error))  
+
 
 //For popup at end of battle.
 function createCard() {
@@ -46,7 +55,8 @@ function createCard() {
 function closeCard(event) {
     event.preventDefault();
 
-    if (close === true)
+    if (close === true){}
+    
 
 };
 
@@ -55,8 +65,3 @@ randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
 
 });
-
-
-
-
-
