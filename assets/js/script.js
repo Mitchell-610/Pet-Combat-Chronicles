@@ -12,6 +12,17 @@ fetch("https://dogapi.dog/api/v2/breeds")
     .then (data => console.log(data.data))
     .catch(error => console.error(error))  
 
+    function rollDice() {
+        // Generate a random number between 1 and 6
+        const diceRoll = Math.floor(Math.random() * 6) + 1;git
+        
+        // Display the result in the console
+        console.log("You rolled a " + diceRoll);
+    }
+    
+    // Call the function to roll the dice
+    rollDice();
+
 
 //For popup at end of battle.
 function createCard() {
