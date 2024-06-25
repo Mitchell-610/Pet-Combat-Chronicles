@@ -1,5 +1,4 @@
 
-
 const randomBtn = document.querySelector(`#randomizeBtn`);
 const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
@@ -23,7 +22,6 @@ fetch("https://dogapi.dog/api/v2/breeds")
     // Call the function to roll the dice
     rollDice();
 
-
 //For popup at end of battle.
 function createCard() {
     const popup = $('<div>')
@@ -45,6 +43,21 @@ function createCard() {
         //This down needs to be tied into close card function neither of them finished.
     close.on('click', closeCard);
     return popup;
+    cardDeleteBtn.on('click', closeCard);
+    if (task.dueDate && task.status !== 'done') {
+        const now = dayjs();
+        const taskDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
+        if (now.isSame(taskDueDate, 'day')) {
+            taskCard.addClass('bg-warning text-white');
+        } else if (now.isAfter(taskDueDate)) {
+            taskCard.addClass('bg-danger text-white');
+            cardDeleteBtn.addClass('border-light');
+        }
+    }
+    cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
+    popUp.append(cardHeader, cardBody);
+    return taskCard;
+
 
 };
 
@@ -60,6 +73,11 @@ function closeCard(event) {
 
 //Getting random dogs.
 /*randomBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+
+});*/
+randomBtn.addEventListener(`click`, function (event) {
+
     event.preventDefault();
 
 });*/

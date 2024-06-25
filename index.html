@@ -6,12 +6,29 @@
     <meta http-equiv="X-UA-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
     <title>Pet Combat</title>
 </head>
 
-<body>
+<body style="background-image: url('./assets/castle.png');">
 
     <header>
+        <a id="page-header">⚔️🏰⚜Pet Combat Chronicles⚜⚔️🤺</a>
+        <div id="textBox">
+            <div class="search-container">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="Name" name="query" id="searchName">
+                </form>
+            </div>
+            <p>My fighter!</p>
+            <div class="search-container">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="Breed" name="query" id="searchBreed">
+                </form>
+            </div>
+        </div>
         <a>Pet Combat Chronicles</a>
         <div id="textBox">
         <div class="search-container">
