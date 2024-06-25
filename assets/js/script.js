@@ -25,7 +25,7 @@ rollDice();
 
 //Creating cards for left and right side of screen, user and cpu.
 function createCard() {
-
+//APPEND THE DAMN CARDS AND MAKE CHILDREN IN THE SECTION.
     const rightDog = document.getElementById(`#rightdog`)
         .addClass('right-card')
         .attr('name', breed);
