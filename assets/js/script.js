@@ -1,8 +1,28 @@
+
+
 const randomBtn = document.querySelector(`#randomizeBtn`);
 const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
+
+fetch("https://dogapi.dog/api/v2/breeds")
+    .then(response => response.json())
+    //.then (data => console.log(data))
+    .then (data => console.log(data.data))
+    .catch(error => console.error(error))  
+
+    function rollDice() {
+        // Generate a random number between 1 and 6
+        const diceRoll = Math.floor(Math.random() * 6) + 1;
+        
+        // Display the result in the console
+        console.log("You rolled a " + diceRoll);
+    }
+    
+    // Call the function to roll the dice
+    rollDice();
+
 
 //For popup at end of battle.
 function createCard() {
@@ -23,20 +43,8 @@ function createCard() {
         
 
         //This down needs to be tied into close card function neither of them finished.
-    cardDeleteBtn.on('click', closeCard);
-    if (task.dueDate && task.status !== 'done') {
-        const now = dayjs();
-        const taskDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
-        if (now.isSame(taskDueDate, 'day')) {
-            taskCard.addClass('bg-warning text-white');
-        } else if (now.isAfter(taskDueDate)) {
-            taskCard.addClass('bg-danger text-white');
-            cardDeleteBtn.addClass('border-light');
-        }
-    }
-    cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
-    popUp.append(cardHeader, cardBody);
-    return taskCard;
+    close.on('click', closeCard);
+    return popup;
 
 };
 
@@ -46,12 +54,12 @@ function closeCard(event) {
 
     if (close === true) {
 
-    }
+    };
 
 };
 
 //Getting random dogs.
-randomBtn.addEventListener(`click`, function (event) {
+/*randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
 
-});
+});*/
