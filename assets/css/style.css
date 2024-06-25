@@ -15,6 +15,24 @@ header {
     background-color: #72c2a5;
 }
 
+#textBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-container input[type="text"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 footer {
     text-align: center;
     font-size: 150%;
