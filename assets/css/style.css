@@ -2,6 +2,13 @@ html {
     background-color: #D9D0CE;
 }
 
+#page-header {
+    font-family: "New Rocker", system-ui;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 65px;
+}
+
 header {
     text-align: center;
     font-size: 150%;
@@ -22,3 +29,16 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+body {
+    background-image: url('./assets/castle.png');
+    background-attachment: fixed; /* to stay fixed on the screen*/
+    background-repeat: no-repeat; /* One image, no repeats*/
+    background-size:cover; /* To cover the entire background */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    }
+
