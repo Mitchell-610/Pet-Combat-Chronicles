@@ -41,6 +41,7 @@ footer {
     margin-top: 38%;
     padding: 5px;
 }
+
 .contentBtn {
     display: flex;
     flex-direction: column;
@@ -59,4 +60,5 @@ body {
     margin: 0;
     padding: 0;
     }
+
 
