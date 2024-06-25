@@ -14,7 +14,7 @@ fetch("https://dogapi.dog/api/v2/breeds")
 
     function rollDice() {
         // Generate a random number between 1 and 6
-        const diceRoll = Math.floor(Math.random() * 6) + 1;git
+        const diceRoll = Math.floor(Math.random() * 6) + 1;
         
         // Display the result in the console
         console.log("You rolled a " + diceRoll);
@@ -43,20 +43,8 @@ function createCard() {
         
 
         //This down needs to be tied into close card function neither of them finished.
-    cardDeleteBtn.on('click', closeCard);
-    if (task.dueDate && task.status !== 'done') {
-        const now = dayjs();
-        const taskDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
-        if (now.isSame(taskDueDate, 'day')) {
-            taskCard.addClass('bg-warning text-white');
-        } else if (now.isAfter(taskDueDate)) {
-            taskCard.addClass('bg-danger text-white');
-            cardDeleteBtn.addClass('border-light');
-        }
-    }
-    cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
-    popUp.append(cardHeader, cardBody);
-    return taskCard;
+    close.on('click', closeCard);
+    return popup;
 
 };
 
@@ -71,7 +59,7 @@ function closeCard(event) {
 };
 
 //Getting random dogs.
-randomBtn.addEventListener(`click`, function (event) {
+/*randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
 
-});
+});*/
