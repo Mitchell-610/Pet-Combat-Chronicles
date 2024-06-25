@@ -43,20 +43,6 @@ function createCard() {
         //This down needs to be tied into close card function neither of them finished.
     close.on('click', closeCard);
     return popup;
-    cardDeleteBtn.on('click', closeCard);
-    if (task.dueDate && task.status !== 'done') {
-        const now = dayjs();
-        const taskDueDate = dayjs(task.dueDate, 'DD/MM/YYYY');
-        if (now.isSame(taskDueDate, 'day')) {
-            taskCard.addClass('bg-warning text-white');
-        } else if (now.isAfter(taskDueDate)) {
-            taskCard.addClass('bg-danger text-white');
-            cardDeleteBtn.addClass('border-light');
-        }
-    }
-    cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
-    popUp.append(cardHeader, cardBody);
-    return taskCard;
 
 
 };
@@ -80,4 +66,4 @@ randomBtn.addEventListener(`click`, function (event) {
 
     event.preventDefault();
 
-});*/
+});
