@@ -1,5 +1,4 @@
 
-
 const randomBtn = document.querySelector(`#randomizeBtn`);
 const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
@@ -23,7 +22,6 @@ fetch("https://dogapi.dog/api/v2/breeds")
     // Call the function to roll the dice
     rollDice();
 
-
 //For popup at end of battle.
 function createCard() {
     const popup = $('<div>')
@@ -46,6 +44,7 @@ function createCard() {
     close.on('click', closeCard);
     return popup;
 
+
 };
 
 //To close popup at end of battle.
@@ -54,7 +53,7 @@ function closeCard(event) {
 
     if (close === true) {
 
-    }
+    };
 
 };
 
@@ -63,3 +62,8 @@ function closeCard(event) {
     event.preventDefault();
 
 });*/
+randomBtn.addEventListener(`click`, function (event) {
+
+    event.preventDefault();
+
+});
