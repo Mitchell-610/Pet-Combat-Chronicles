@@ -54,7 +54,7 @@ function closeCard(event) {
 
     if (close === true) {
 
-    }
+    };
 
 };
 
