@@ -22,8 +22,6 @@ fetch("https://dogapi.dog/api/v2/breeds")
     // Call the function to roll the dice
     rollDice();
 
-
-
 //For popup at end of battle.
 function createCard() {
     const popup = $('<div>')
@@ -60,6 +58,7 @@ function createCard() {
     popUp.append(cardHeader, cardBody);
     return taskCard;
 
+
 };
 
 //To close popup at end of battle.
@@ -78,6 +77,7 @@ function closeCard(event) {
 
 });*/
 randomBtn.addEventListener(`click`, function (event) {
+
     event.preventDefault();
 
-});
+});*/
