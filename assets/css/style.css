@@ -56,8 +56,11 @@ footer {
     font-size: 150%;
     background-color: #72c2a5;
     color: black;
-    margin-top: 4%;
+    /* margin-top: auto;
     padding: 5px;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column; */
 }
 
 .contentBtn {
@@ -88,11 +91,14 @@ body {
     background-attachment: fixed; /* to stay fixed on the screen*/
     background-repeat: no-repeat; /* One image, no repeats*/
     background-size:cover; /* To cover the entire background */
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     }
 
+    main {
+        flex-grow: 1;
+    }
 
