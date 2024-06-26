@@ -116,9 +116,22 @@ cpuDog = {
 
 
     yourDogFact.push(ld.fact);
-    console.log("YOUR DOG FACT!!!!",yourDogFact);
+    console.log(yourDogFact);
+//Appending it to screen in code below.
+    let rightDog = document.getElementById(`rightDog`);
+    console.log(rightDog);
 
-    
+    rightDog.children[0].textContent = rdn;
+//Tie in photo here.
+
+
+    let leftDog = document.getElementById(`leftDog`);
+    console.log(leftDog);
+
+    leftDog.children[0].textContent = ldn;
+//Tie in photo here.
+
+
 });
 let rightDogUniversalscore;
 let leftDogUniversalscore;
