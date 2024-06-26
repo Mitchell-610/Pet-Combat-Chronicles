@@ -9,6 +9,24 @@ html {
     font-size: 65px;
 }
 
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin: 10px 0;
+    text-align: center; 
+    position: absolute;
+    z-index: 1; 
+} 
+
+/* Absolute positioning */
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width of the banner */
+    height: auto;
+}
+
 header {
     text-align: center;
     font-size: 150%;
@@ -38,8 +56,11 @@ footer {
     font-size: 150%;
     background-color: #72c2a5;
     color: black;
-    margin-top: 38%;
+    /* margin-top: auto;
     padding: 5px;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column; */
 }
 
 .contentBtn {
@@ -47,6 +68,22 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px; /* Move the buttons lower */
+    gap: 50px; /* Add space between buttons */
+}
+
+.contentBtn button {
+    font-size: 18px; 
+    padding: 45px 60px; /* Make the buttons bigger */
+    border: none;
+    border-radius: 8px;
+    background-color: #72c2a5; 
+    color: black; 
+    cursor: pointer; 
+}
+
+.contentBtn button:hover {
+    background-color: #5a9e82; 
 }
 
 body {
@@ -54,11 +91,14 @@ body {
     background-attachment: fixed; /* to stay fixed on the screen*/
     background-repeat: no-repeat; /* One image, no repeats*/
     background-size:cover; /* To cover the entire background */
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     }
 
+    main {
+        flex-grow: 1;
+    }
 
