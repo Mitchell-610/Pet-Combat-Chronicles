@@ -5,11 +5,25 @@ const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
 
-fetch("https://dogapi.dog/api/v2/breeds")
-    .then(response => response.json())
-    //.then (data => console.log(data))
-    .then (data => console.log(data.data))
-    .catch(error => console.error(error))  
+fetch('https://dogapi.dog/api/v2/breeds')
+  .then(response => response.json())
+  .then(data => {
+    data.data.forEach(breed => {
+      console.log(breed)
+        const name = breed.attributes.name;
+      const weightmax = breed.attributes.male_weight.max;
+     const weightmin = breed.attributes.male_weight.min;
+      const lifespanmax = breed.attributes.life.max;
+      const lifespanmin = breed.attributes.life.min;
+      
+
+    
+     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax}`);
+    });
+  })
+
+ //.catch(error => console.error('Error fetching data:', error));
+
 
     function rollDice() {
         // Generate a random number between 1 and 6
@@ -21,6 +35,22 @@ fetch("https://dogapi.dog/api/v2/breeds")
     
     // Call the function to roll the dice
     rollDice();
+
+    function fetchRandomDogImage() {
+        fetch('https://dog.ceo/api/breeds/image/random')
+            .then(response => response.json())  // Convert the response to JSON
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log("Random Dog Image URL:", data.message);  // Output the image URL
+                } else {
+                    console.error("Failed to fetch a random dog image");
+                }
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    }
+    
+    // Call the function to fetch and log a random dog image
+    fetchRandomDogImage();
 
 //For popup at end of battle.
 function createCard() {
@@ -62,8 +92,8 @@ function closeCard(event) {
     event.preventDefault();
 
 });*/
-randomBtn.addEventListener(`click`, function (event) {
+//randomBtn.addEventListener(`click`, function (event) {
 
-    event.preventDefault();
+ //   event.preventDefault();
 
-});
+//});
