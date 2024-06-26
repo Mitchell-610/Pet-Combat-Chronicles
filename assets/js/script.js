@@ -27,36 +27,34 @@ rollDice();
 function createCard() {
 //APPEND THE DAMN CARDS AND MAKE CHILDREN IN THE SECTION.
     const rightDog = document.getElementById(`#rightdog`)
-        .addClass('right-card')
-        .attr('name', breed);
+    data.data.forEach(breed);
 
-    rightDog.children[0].textcontent(breed);
+    const breed = data.data.attribute.name;
 
+    const dogLifeMax = data.data.attribute.life.max;
+    const dogLifeMin = data.data.attribute.life.min;
+const dogLife = dogLifeMax + dogLifeMin / 2;
 
+    const dogHypo = data.data.attribute.hypoallergenic;
 
-    const cardHeader = document.getElementB
+    const dogWeightMax = data.data.attribute.male_weight.max;
+    const dogWeightMin = data.data.attribute.male_weight.min;
+const dogWeight = dogWeightMax + dogWeightMin / 2;
 
-    const cardBody = $('<div>').addClass('card-body');
-
-    const dogLife = $('<p>').addClass('card-text').text(life.value /* NEED TO CREATE CONST FOR DOGS LIFE POINTS VALUE */);
-    const dogHypo = $('<p>').addClass('card-text').text(hypo.value/* CREATE CONST FOR DOGS HYPO ALLERGIES VALUE */);
-    const dogWeight = $('<p>').addClass('card-text').text(weight.value/* CREATE CONST FOR WEIGHT VALUE */);
-
-    const close = $('<button>')
-        .addClass('btn btn-danger close')
-        .text('Close')
-
-
-    //This down needs to be tied into close card function neither of them finished.
-    close.on('click', closeCard);
-    return popup;
-
-
+    rightDog.children[0].textContent(breed);
+    rightDog.children[1].textContent(dogLife);
+    rightDog.children[2].textContent(dogHypo);
+    rightDog.children[3].textContent(dogWeight);
+    console.log(breed);
+    console.log(dogLife);
+    console.log(dogHypo);
+    console.log(dogWeight);
 };
 
 
 //For popup at end of battle.
 function popUpCard() {
+    
 
 };
 
