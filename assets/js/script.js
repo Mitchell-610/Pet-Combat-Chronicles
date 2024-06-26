@@ -156,6 +156,7 @@ const diceRoll = rollDice()
             }
             console.log("CPU dog final score is:", rdFinalScore)
            
+
         //             console.log(`these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`)
 
         }
