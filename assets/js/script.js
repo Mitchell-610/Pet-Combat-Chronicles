@@ -4,71 +4,95 @@ const battleBtn = document.querySelector(`#battleBtn`);
 const pastBtn = document.querySelector(`#pastBtn`);
 const nameValue = document.querySelector(`#searchName`);
 const breedValue = document.querySelector(`#searchBreed`);
+let dogsArray = [];
+let cpuDogFact = [];
+let yourDogFact = [];
+
 
 fetch('https://dogapi.dog/api/v2/breeds')
-  .then(response => response.json())
-  .then(data => {
-    data.data.forEach(breed => {
-        const name = breed.attributes.name;
-        const dogHypo = breed.attributes.hypoallergenic;
-      const weightmax = breed.attributes.male_weight.max;
-     const weightmin = breed.attributes.male_weight.min;
-     const dogWeight = weightmax + weightmin / 2;
+    .then(response => response.json())
+    .then(data => {
+        data.data.forEach(breed => {
+            const name = breed.attributes.name;
+            const dogHypo = breed.attributes.hypoallergenic;
+            //Here we are pulling attributes for max and min weight
+            const weightmax = breed.attributes.male_weight.max;
+            const weightmin = breed.attributes.male_weight.min;
+            const dogWeight = weightmax + weightmin / 2;
 
+            const lifespanmax = breed.attributes.life.max;
+            const lifespanmin = breed.attributes.life.min;
+            const dogLife = lifespanmax + lifespanmin / 2;
 
-      const lifespanmax = breed.attributes.life.max;
-      const lifespanmin = breed.attributes.life.min;
-    const dogLife = lifespanmax + lifespanmin / 2;
+            const fact = breed.attributes.description;
 
-     console.log(`Your dog is a: ${name}, He has a wight of: ${dogWeight}, A Lifespan of: ${dogLife}, and ${dogHypo} a Hypoallergy.`);
-     console.log(` `);
+            let dog = {
+                name: name,
+                dogHypo: dogHypo,
+                dogLife: dogLife,
+                dogWeight: dogWeight,
+                fact: fact
+            };
+
+            dogsArray.push(dog);
+
+            console.log(`Your dog is a: ${name}, He has a wight of: ${dogWeight}, A Lifespan of: ${dogLife}, and ${dogHypo} a Hypoallergy.`);
+            console.log(` `);
+        });
     });
-  });
 
-    function rollDice() {
-        // Generate a random number between 1 and 6
-        const diceRoll = Math.floor(Math.random() * 6) + 1;
-        
-        // Display the result in the console
-        console.log("You rolled a " + diceRoll);
-    }
+function rollDice() {
+    // Generate a random number between 1 and 6
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
 
-    // Call the function to roll the dice
-    rollDice();
+    // Display the result in the console
+    console.log("You rolled a " + diceRoll);
+}
+
+// Call the function to roll the dice
+rollDice();
 
 
 //Creating cards for left and right side of screen, user and cpu.
-function createCard() {
-//APPEND THE DAMN CARDS AND MAKE CHILDREN IN THE SECTION.
-    const rightDog = document.getElementById(`#rightdog`)
-    data.data.forEach(breed);
+randomBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+    // console.log(dogsArray);
 
-    const breed = data.data.attribute.name;
+    let rd = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
+    console.log(rd);
+    let rdn = rd.name;
+    console.log(rdn);
+    let rdw = rd.dogWeight;
+    console.log(rdw);
+    let rdh = rd.dogHypo;
+    console.log(rdh);
+    let rdl = rd.dogLife;
+    console.log(rdl);
 
-    const dogLifeMax = data.data.attribute.life.max;
-    const dogLifeMin = data.data.attribute.life.min;
-const dogLife = dogLifeMax + dogLifeMin / 2;
+    cpuDogFact.push(rd.fact);
+    console.log(cpuDogFact);
 
-    const dogHypo = data.data.attribute.hypoallergenic;
+    let ld = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
+    console.log(ld);
+    let ldn = ld.name;
+    console.log(ldn);
+    let ldw = ld.dogWeight;
+    console.log(ldw);
+    let ldh = ld.dogHypo;
+    console.log(ldh);
+    let ldl = ld.dogLife;
+    console.log(ldl);
 
-    const dogWeightMax = data.data.attribute.male_weight.max;
-    const dogWeightMin = data.data.attribute.male_weight.min;
-const dogWeight = dogWeightMax + dogWeightMin / 2;
+    yourDogFact.push(ld.fact);
+    console.log(yourDogFact);
 
-    rightDog.children[0].textContent(breed);
-    rightDog.children[1].textContent(dogLife);
-    rightDog.children[2].textContent(dogHypo);
-    rightDog.children[3].textContent(dogWeight);
-    console.log(breed);
-    console.log(dogLife);
-    console.log(dogHypo);
-    console.log(dogWeight);
-};
+    
+});
+
 
 
 //For popup at end of battle.
 function popUpCard() {
-    
 
 };
 
@@ -82,10 +106,3 @@ function closeCard(event) {
     };
 
 };
-
-//Getting random dogs.
-/*randomBtn.addEventListener(`click`, function (event) {
-    event.preventDefault();
-
-});*/
-
