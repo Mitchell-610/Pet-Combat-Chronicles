@@ -9,22 +9,18 @@ fetch('https://dogapi.dog/api/v2/breeds')
   .then(response => response.json())
   .then(data => {
     data.data.forEach(breed => {
-        console.log(breed);
         const name = breed.attributes.name;
         const dogHypo = breed.attributes.hypoallergenic;
-        console.log(dogHypo)
       const weightmax = breed.attributes.male_weight.max;
      const weightmin = breed.attributes.male_weight.min;
      const dogWeight = weightmax + weightmin / 2;
-     console.log(`Dogs weight points are ${dogWeight}`);
 
 
       const lifespanmax = breed.attributes.life.max;
       const lifespanmin = breed.attributes.life.min;
     const dogLife = lifespanmax + lifespanmin / 2;
-    console.log(`Dogs life points are ${dogLife}`);
 
-     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax}`);
+     console.log(`Your dog is a: ${name}, He has a wight of: ${dogWeight}, A Lifespan of: ${dogLife}, and ${dogHypo} a Hypoallergy.`);
      console.log(` `);
     });
   });
