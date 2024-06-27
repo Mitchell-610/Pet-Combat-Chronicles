@@ -83,70 +83,70 @@ function convertDogNameRD(){
 
 
     if(rd.name === "Caucasian Shepherd Dog"){
-       rd.name = "ovcharka-caucasian";
+       rd.name = "ovcharka/caucasian";
     } 
    if(rd.name === "Bouvier des Flandres") {
         rd.name = "Bouvier";
    }
    if(rd.name === "Grand Basset Griffon Vendéen"){
-        rd.name = "hound-basset";
+        rd.name = "hound/basset";
    }
    if(rd.name === "Hokkaido"){
 
         rd.name = "Akita";
    }
    if(rd.name === "Japanese Terrier"){
-        rd.name = "spitz-japanese";
+        rd.name = "spitz/japanese";
    }
    if(rd.name === "Hanoverian Scenthound"){
         rd.name = "Coonhound";
    }
    if(rd.name === "Tibetan Spaniel"){
-        rd.name = "terrier-tibetan";
+        rd.name = "terrier/tibetan";
    }
    if(rd.name === "Border Collie"){
-        rd.name = "collie-border";
+        rd.name = "collie/border";
    }
    if(rd.name === "Curly-Coated Retriever"){
-        rd.name = "retriever-curly";
+        rd.name = "retriever/curly";
    }
    if(rd.name === "Skye Terrier"){
-        rd.name = "terrier-scottish";
+        rd.name = "terrier/scottish";
    }
   rightDogImage()
 }
 function convertDogNameLD(){
     
     if(ld.name === "Caucasian Shepherd Dog"){
-       ld.name = "ovcharka-caucasian";
+       ld.name = "ovcharka/caucasian";
     } 
    if(ld.name === "Bouvier des Flandres") {
         ld.name = "Bouvier";
    }
    if(ld.name === "Grand Basset Griffon Vendéen"){
-        ld.name = "hound-basset";
+        ld.name = "hound/basset";
    }
    if(ld.name === "Hokkaido"){
 
         ld.name = "Akita";
    }
    if(ld.name === "Japanese Terrier"){
-        ld.name = "spitz-japanese";
+        ld.name = "spitz/japanese";
    }
    if(ld.name === "Hanoverian Scenthound"){
         ld.name = "Coonhound";
    }
    if(ld.name === "Tibetan Spaniel"){
-        ld.name = "terrier-tibetan";
+        ld.name = "terrier/tibetan";
    }
    if(ld.name === "Border Collie"){
-        ld.name = "collie-border";
+        ld.name = "collie/border";
    }
    if(ld.name === "Curly-Coated Retriever"){
-        ld.name = "retriever-curly";
+        ld.name = "retriever/curly";
    }
    if(ld.name === "Skye Terrier"){
-        ld.name = "terrier-scottish";
+        ld.name = "terrier/scottish";
    }
   
    leftDogImage()
