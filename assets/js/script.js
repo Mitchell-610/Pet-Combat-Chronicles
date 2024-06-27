@@ -15,20 +15,20 @@ fetch('https://dogapi.dog/api/v2/breeds')
      const weightmin = breed.attributes.male_weight.min;
       const lifespanmax = breed.attributes.life.max;
       const lifespanmin = breed.attributes.life.min;
-      
+     
+   
 
-    
-     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax}`);
+     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax},`);
     });
   })
 
  //.catch(error => console.error('Error fetching data:', error));
 
 
+ 
     function rollDice() {
-        // Generate a random number between 1 and 6
+        // Generate a randometween 1 and 6
         const diceRoll = Math.floor(Math.random() * 6) + 1;
-        
         // Display the result in the console
         console.log("You rolled a " + diceRoll);
     }
@@ -36,21 +36,39 @@ fetch('https://dogapi.dog/api/v2/breeds')
     // Call the function to roll the dice
     rollDice();
 
-    function fetchRandomDogImage() {
-        fetch('https://dog.ceo/api/breeds/image/random')
-            .then(response => response.json())  // Convert the response to JSON
+    function fetchRandomDoggo()
+     {
+        fetch('https://dogapi.dog/api/v2/breeds')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                if (data.status === 'success') {
-                    console.log("Random Dog Image URL:", data.message);  // Output the image URL
+                console.log(data)
+                if (data && data.data.length > 0) {
+                    // Selecting a random object from the array
+                    const randomIndex = Math.floor(Math.random() * data.data.length);
+                   // console.log(data.data.length)
+                    const randomObject = data.data[randomIndex];
+                    
+console.log(randomIndex)
+
+console.log(randomObject)
+                   
+                    console.log(`Display data ${randomIndex}`);
                 } else {
-                    console.error("Failed to fetch a random dog image");
+                    console.log('No data available');
                 }
             })
-            .catch(error => console.error("Error fetching data:", error));
-    }
-    
-    // Call the function to fetch and log a random dog image
-    fetchRandomDogImage();
+            .catch(error => console.error('Error fetching or processing data:', error));
+
+            
+    };
+    // Call the function to fetch and log a random dog 
+    fetchRandomDoggo()
+        
 
 //For popup at end of battle.
 function createCard() {
