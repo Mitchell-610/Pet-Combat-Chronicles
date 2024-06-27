@@ -21,7 +21,7 @@ WHEN I finish a battle THEN I will see a fact about the winning dog
 ## Mock-up
 ![Alt Text](assets/mock-up.png)
 
-## Acknowlegements
+## Acknowledgements
 Special thanks to our TA's Mateo Wallace & Mark Alfano for giving us support. Last but not least, to our instructor Darian Mendez for teaching us everything we know.
 
 ## Collaborators
