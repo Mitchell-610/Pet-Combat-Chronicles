@@ -318,4 +318,3 @@ function finalBattle() {
 fetchDog()
 
 //Call the function to roll the dice
-//rollDice();
