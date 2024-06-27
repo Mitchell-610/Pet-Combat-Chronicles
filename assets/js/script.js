@@ -7,6 +7,8 @@ const breedValue = document.querySelector(`#searchBreed`);
 let dogsArray = [];
 let cpuDogFact = [];
 let yourDogFact = [];
+let rd;
+let ld;
 
 function fetchImage(dogName) {
     console.log(dogName);
@@ -56,10 +58,101 @@ function rollDice() {
 
 }
 
+function leftDogImage(){
+fetch(`https://dog.ceo/api/breed/${ld.name.toLowerCase()}/images/random`)
+    .then(response => response.json())
+    .then(data =>{console.log("Image api data left dog", data )})
+}
+
+function rightDogImage(){
+fetch(`https://dog.ceo/api/breed/${rd.name.toLowerCase()}/images/random`)
+    .then(response => response.json())
+    .then(data =>{console.log("Image api data right dog", data )})
+
+
+}
 //Call the function to roll the dice
 // rollDice();
 
 let myDog;
+
+
+
+function convertDogNameRD(){
+
+
+
+    if(rd.name === "Caucasian Shepherd Dog"){
+       rd.name = "ovcharka-caucasian";
+    } 
+   if(rd.name === "Bouvier des Flandres") {
+        rd.name = "Bouvier";
+   }
+   if(rd.name === "Grand Basset Griffon Vendéen"){
+        rd.name = "hound-basset";
+   }
+   if(rd.name === "Hokkaido"){
+
+        rd.name = "Akita";
+   }
+   if(rd.name === "Japanese Terrier"){
+        rd.name = "spitz-japanese";
+   }
+   if(rd.name === "Hanoverian Scenthound"){
+        rd.name = "Coonhound";
+   }
+   if(rd.name === "Tibetan Spaniel"){
+        rd.name = "terrier-tibetan";
+   }
+   if(rd.name === "Border Collie"){
+        rd.name = "collie-border";
+   }
+   if(rd.name === "Curly-Coated Retriever"){
+        rd.name = "retriever-curly";
+   }
+   if(rd.name === "Skye Terrier"){
+        rd.name = "terrier-scottish";
+   }
+  rightDogImage()
+}
+function convertDogNameLD(){
+    
+    if(ld.name === "Caucasian Shepherd Dog"){
+       ld.name = "ovcharka-caucasian";
+    } 
+   if(ld.name === "Bouvier des Flandres") {
+        ld.name = "Bouvier";
+   }
+   if(ld.name === "Grand Basset Griffon Vendéen"){
+        ld.name = "hound-basset";
+   }
+   if(ld.name === "Hokkaido"){
+
+        ld.name = "Akita";
+   }
+   if(ld.name === "Japanese Terrier"){
+        ld.name = "spitz-japanese";
+   }
+   if(ld.name === "Hanoverian Scenthound"){
+        ld.name = "Coonhound";
+   }
+   if(ld.name === "Tibetan Spaniel"){
+        ld.name = "terrier-tibetan";
+   }
+   if(ld.name === "Border Collie"){
+        ld.name = "collie-border";
+   }
+   if(ld.name === "Curly-Coated Retriever"){
+        ld.name = "retriever-curly";
+   }
+   if(ld.name === "Skye Terrier"){
+        ld.name = "terrier-scottish";
+   }
+  
+   leftDogImage()
+}
+
+
 
 
 
@@ -68,7 +161,7 @@ randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
     // console.log(dogsArray);
 
-    let rd = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
+    rd = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
     console.log(rd);
     let rdn = rd.name;
     console.log(rdn);
@@ -82,7 +175,7 @@ randomBtn.addEventListener(`click`, function (event) {
     cpuDogFact.push(rd.fact);
     console.log(cpuDogFact);
 
-    let ld = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
+    ld = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
     console.log(ld);
     let ldn = ld.name;
     console.log(ldn);
@@ -130,7 +223,8 @@ randomBtn.addEventListener(`click`, function (event) {
 
     leftDog.children[0].textContent = ldn;
     //Tie in photo here.
-
+    convertDogNameRD()
+    convertDogNameLD()
 
 });
 
