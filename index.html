@@ -20,19 +20,25 @@
 
     <div id="textBox">
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Name" name="query" id="searchName">
-            </form>
+            <div class="random-word-box">
+                <p id="random-words-left"></p>
+                <button onclick="displayRandomWords('random-words-left')">Generate YOUR Dog's Name</button>
+            </div>
+
         </div>
         <p class="title">My fighter!</p>
         <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Breed" name="query" id="searchBreed">
-            </form>
+
+            <div class="random-word-box">
+                <p id="random-words-right"></p>
+                <button onclick="displayRandomWords('random-words-right')">Generate CPU Dog's Name</button>
+            </div>
         </div>
     </div>
+</head>
 
+<body>
     <main>
         <div id="content">
             <section id="leftDog">
@@ -48,7 +54,6 @@
 
                 //<button id="btn fightBtn">FIGHT</button> -->
 
-                <button id="pastBtn">Past Battles</button>
             </div>
 
             <section id="rightDog">
@@ -57,7 +62,6 @@
 
         </div>
     </main>
-
 
     <footer>
         <p>&copy; 2024 </p>
