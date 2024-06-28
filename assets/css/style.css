@@ -98,7 +98,34 @@ body {
     padding: 0;
     }
 
-    main {
-        flex-grow: 1;
-    }
+main {
+    flex-grow: 1;
+}
 
+#content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+#leftDog, #rightDog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; 
+    height: 300px; 
+    padding: 20px; 
+    background-color: #72c2a5; 
+    color: black; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 150px; 
+}
+
+.dog-image {
+    max-width: 100%;
+    height: auto;
+}
