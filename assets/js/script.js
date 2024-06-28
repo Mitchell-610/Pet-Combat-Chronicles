@@ -297,7 +297,7 @@ function createCard() {
     convertDogNameRD()
     convertDogNameLD()
 
-});
+};
 
 let rightDogUniversalscore;
 let leftDogUniversalscore;
