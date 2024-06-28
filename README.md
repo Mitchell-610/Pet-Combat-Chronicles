@@ -18,6 +18,13 @@ WHEN I click on “battle” THEN the user will receive battle boost based on a 
 
 WHEN I finish a battle THEN I will see a fact about the winning dog
 
+## API's used
+- Dog API: Fetching dog breeds information.
+https://dogapi.dog/docs/api-v2
+
+- Dog CEO API: Fetching random dog images for battles.
+https://dog.ceo/dog-api/
+
 ## Mock-up
 ![Alt Text](assets/mock-up.png)
 
