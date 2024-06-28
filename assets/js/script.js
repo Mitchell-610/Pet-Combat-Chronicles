@@ -48,26 +48,17 @@ function fetchDog() {
             });
         });
 }
-function rollDice() {
-    // Generate a random number between 1 and 6
-    const diceRoll = Math.floor(Math.random() * 6) + 1;
 
-    // Display the result in the console
-    console.log("You rolled a " + diceRoll);
-    return diceRoll;
-
+function leftDogImage() {
+    fetch(`https://dog.ceo/api/breed/${ld.name.toLowerCase()}/images/random`)
+        .then(response => response.json())
+        .then(data => { console.log("Image api data left dog", data) })
 }
 
-function leftDogImage(){
-fetch(`https://dog.ceo/api/breed/${ld.name.toLowerCase()}/images/random`)
-    .then(response => response.json())
-    .then(data =>{console.log("Image api data left dog", data )})
-}
-
-function rightDogImage(){
-fetch(`https://dog.ceo/api/breed/${rd.name.toLowerCase()}/images/random`)
-    .then(response => response.json())
-    .then(data =>{console.log("Image api data right dog", data )})
+function rightDogImage() {
+    fetch(`https://dog.ceo/api/breed/${rd.name.toLowerCase()}/images/random`)
+        .then(response => response.json())
+        .then(data => { console.log("Image api data right dog", data) })
 
 
 }
@@ -78,106 +69,106 @@ let myDog;
 
 
 
-function convertDogNameRD(){
+function convertDogNameRD() {
 
 
 
-    if(rd.name === "Caucasian Shepherd Dog"){
-       rd.name = "ovcharka/caucasian";
-    } 
-   if(rd.name === "Bouvier des Flandres") {
+    if (rd.name === "Caucasian Shepherd Dog") {
+        rd.name = "ovcharka/caucasian";
+    }
+    if (rd.name === "Bouvier des Flandres") {
         rd.name = "Bouvier";
-   }
-   if(rd.name === "Grand Basset Griffon Vendéen"){
+    }
+    if (rd.name === "Grand Basset Griffon Vendéen") {
         rd.name = "hound/basset";
-   }
-   if(rd.name === "Hokkaido"){
+    }
+    if (rd.name === "Hokkaido") {
 
         rd.name = "Akita";
-   }
-   if(rd.name === "Japanese Terrier"){
+    }
+    if (rd.name === "Japanese Terrier") {
         rd.name = "spitz/japanese";
-   }
-   if(rd.name === "Hanoverian Scenthound"){
+    }
+    if (rd.name === "Hanoverian Scenthound") {
         rd.name = "Coonhound";
-   }
-   if(rd.name === "Tibetan Spaniel"){
+    }
+    if (rd.name === "Tibetan Spaniel") {
         rd.name = "terrier/tibetan";
-   }
-   if(rd.name === "Border Collie"){
+    }
+    if (rd.name === "Border Collie") {
         rd.name = "collie/border";
-   }
-   if(rd.name === "Curly-Coated Retriever"){
+    }
+    if (rd.name === "Curly-Coated Retriever") {
         rd.name = "retriever/curly";
-   }
-   if(rd.name === "Skye Terrier"){
+    }
+    if (rd.name === "Skye Terrier") {
         rd.name = "terrier/scottish";
-   }
-  rightDogImage()
+    }
+    rightDogImage()
 }
 fetch('https://dogapi.dog/api/v2/breeds')
-  .then(response => response.json())
-  .then(data => {
-    data.data.forEach(breed => {
-      console.log(breed)
-        const name = breed.attributes.name;
-      const weightmax = breed.attributes.male_weight.max;
-     const weightmin = breed.attributes.male_weight.min;
-      const lifespanmax = breed.attributes.life.max;
-      const lifespanmin = breed.attributes.life.min;
-     
-   
-
-     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax},`);
-    });
-  })
-
- //.catch(error => console.error('Error fetching data:', error));
+    .then(response => response.json())
+    .then(data => {
+        data.data.forEach(breed => {
+            console.log(breed)
+            const name = breed.attributes.name;
+            const weightmax = breed.attributes.male_weight.max;
+            const weightmin = breed.attributes.male_weight.min;
+            const lifespanmax = breed.attributes.life.max;
+            const lifespanmin = breed.attributes.life.min;
 
 
- 
-    function rollDice() {
-        // Generate a randometween 1 and 6
-        const diceRoll = Math.floor(Math.random() * 6) + 1;
-        // Display the result in the console
-        console.log("You rolled a " + diceRoll);
+
+            console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax},`);
+        });
+    })
+
+//.catch(error => console.error('Error fetching data:', error));
+
+
+
+function rollDice() {
+    // Generate a randometween 1 and 6
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
+    // Display the result in the console
+    console.log("You rolled a " + diceRoll);
+}
+function convertDogNameLD() {
+
+
+    if (ld.name === "Caucasian Shepherd Dog") {
+        ld.name = "ovcharka/caucasian";
     }
-function convertDogNameLD(){
-
-    
-    if(ld.name === "Caucasian Shepherd Dog"){
-       ld.name = "ovcharka/caucasian";
-    } 
-   if(ld.name === "Bouvier des Flandres") {
+    if (ld.name === "Bouvier des Flandres") {
         ld.name = "Bouvier";
-   }
-   if(ld.name === "Grand Basset Griffon Vendéen"){
+    }
+    if (ld.name === "Grand Basset Griffon Vendéen") {
         ld.name = "hound/basset";
-   }
-   if(ld.name === "Hokkaido"){
+    }
+    if (ld.name === "Hokkaido") {
 
         ld.name = "Akita";
-   }
-   if(ld.name === "Japanese Terrier"){
+    }
+    if (ld.name === "Japanese Terrier") {
         ld.name = "spitz/japanese";
-   }
-   if(ld.name === "Hanoverian Scenthound"){
+    }
+    if (ld.name === "Hanoverian Scenthound") {
         ld.name = "Coonhound";
-   }
-   if(ld.name === "Tibetan Spaniel"){
+    }
+    if (ld.name === "Tibetan Spaniel") {
         ld.name = "terrier/tibetan";
-   }
-   if(ld.name === "Border Collie"){
+    }
+    if (ld.name === "Border Collie") {
         ld.name = "collie/border";
-   }
-   if(ld.name === "Curly-Coated Retriever"){
+    }
+    if (ld.name === "Curly-Coated Retriever") {
         ld.name = "retriever/curly";
-   }
-   if(ld.name === "Skye Terrier"){
+    }
+    if (ld.name === "Skye Terrier") {
         ld.name = "terrier/scottish";
-   }
-  
-   leftDogImage()
+    }
+
+    leftDogImage()
 }
 
 
@@ -187,50 +178,45 @@ function convertDogNameLD(){
 //Creating cards for left and right side of screen, user and cpu.
 randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
-  createCard();
+    createCard();
     // console.log(dogsArray);
 });
-    function fetchRandomDoggo()
-     {
-        fetch('https://dogapi.dog/api/v2/breeds')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data)
-                if (data && data.data.length > 0) {
-                    // Selecting a random object from the array
-                    const randomIndex = Math.floor(Math.random() * data.data.length);
-                   // console.log(data.data.length)
-                    const randomObject = data.data[randomIndex];
-                    
-console.log(randomIndex)
+function fetchRandomDoggo() {
+    fetch('https://dogapi.dog/api/v2/breeds')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+            if (data && data.data.length > 0) {
+                // Selecting a random object from the array
+                const randomIndex = Math.floor(Math.random() * data.data.length);
+                // console.log(data.data.length)
+                const randomObject = data.data[randomIndex];
 
-console.log(randomObject)
-                   
-                    console.log(`Display data ${randomIndex}`);
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch(error => console.error('Error fetching or processing data:', error));
+                console.log(randomIndex)
 
-            
-    };
-    // Call the function to fetch and log a random dog 
-    fetchRandomDoggo()
-        
+                console.log(randomObject)
+
+                console.log(`Display data ${randomIndex}`);
+            } else {
+                console.log('No data available');
+            }
+        })
+        .catch(error => console.error('Error fetching or processing data:', error));
+
+
+};
+// Call the function to fetch and log a random dog 
+fetchRandomDoggo()
+
 
 //For popup at end of battle.
 function createCard() {
-    const popup = $('<div>')
-        .addClass('card task-card my-3')
-        .attr('data-task-id', breed);
-    const cardHeader = $('<div>').addClass('card-header h4').text(breed.value);
-    const cardBody = $('<div>').addClass('card-body');
+
 
     rd = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
     console.log(rd);
@@ -297,7 +283,7 @@ function createCard() {
     convertDogNameRD()
     convertDogNameLD()
 
-});
+};
 
 let rightDogUniversalscore;
 let leftDogUniversalscore;
@@ -307,7 +293,7 @@ let ldFinalScore;
 //total power tally for left dog / player dog
 function totallifeLD() {
     const diceRoll = rollDice()
-
+    console.log(rollDice())
     console.log("THIS IS MY DICE ROLL", diceRoll)
 
     if (myDog.ldh == true) {
@@ -358,8 +344,8 @@ function closeCard(event) {
 
 };
 
-function winLoss(){
-    if (ldFinalScore >= rdFinalScore){
+function winLoss() {
+    if (ldFinalScore >= rdFinalScore) {
         console.log("you win!")
     } else {
         console.log("YOU LOSE!")
@@ -381,6 +367,15 @@ function finalBattle() {
 }
 
 
+function rollDice() {
+    // Generate a random number between 1 and 6
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
+
+    // Display the result in the console
+    console.log("You rolled a " + diceRoll);
+    return diceRoll;
+
+}
 
 
 
