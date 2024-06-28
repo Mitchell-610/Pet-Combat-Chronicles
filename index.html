@@ -6,28 +6,61 @@
     <meta http-equiv="X-UA-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
     <title>Pet Combat</title>
 </head>
 
-<body>
+<body style="background-image: url('./assets/castle.png');">
 
-    <head>
-        <header class="header"><a>Pet Combat Chronicles</a> 
-    </head>
+    <header>
+        <a id="page-header">⚔️🏰⚜Pet Combat Chronicles⚜⚔️🤺</a>
+    </header>
 
+    <div id="textBox">
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Name" name="query" id="searchName">
+            </form>
+        </div>
+        <p class="title">My fighter!</p>
+        <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Breed" name="query" id="searchBreed">
+            </form>
+        </div>
+    </div>
 
     <main>
         <div id="content">
             <section id="leftDog">
-
+                <h2></h2>
+                <p></p>
+                <p></p>
+                <p></p>
             </section>
+            
+            <div class="contentBtn">
+                <button id="randomizeBtn">Randomize</button>
 
-            <button id="btn">Fight</button>
+                <button id="battleBtn">Battle!</button>
+          <!-- //Reroute things in js if we can no longer call old id's.
+               // <button id="btn randomBtn">Randomize</button>
 
+                //<button id="btn fightBtn">FIGHT</button> -->
+
+                <button id="pastBtn">Past Battles</button>
+            </div>
 
             <section id="rightDog">
-
+                <h2></h2>
+                <p></p>
+                <p></p>
+                <p></p>
             </section>
+
         </div>
     </main>
 
