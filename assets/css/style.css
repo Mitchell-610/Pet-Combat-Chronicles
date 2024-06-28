@@ -117,8 +117,8 @@ main {
     align-items: center;
     width: 100%;
     font-size: 20px;
-    position: fixed; /* Fix the content to the screen */
-    bottom: 50px; /* Align it to the bottom of the screen */
+    /* position: fixed; /* Fix the content to the screen */
+    /* bottom: 50px; Align it to the bottom of the screen */ 
 }
 
 #leftDog, #rightDog {
