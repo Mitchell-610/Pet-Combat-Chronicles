@@ -16,20 +16,22 @@
 
     <header>
         <a id="page-header">⚔️🏰⚜Pet Combat Chronicles⚜⚔️🤺</a>
-        <div id="textBox">
-            <div class="search-container">
-                <form action="/search" method="get">
-                    <input type="text" placeholder="Name" name="query" id="searchName">
-                </form>
-            </div>
-            <p>My fighter!</p>
-            <div class="search-container">
-                <form action="/search" method="get">
-                    <input type="text" placeholder="Breed" name="query" id="searchBreed">
-                </form>
-            </div>
-        </div>
     </header>
+
+    <div id="textBox">
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Name" name="query" id="searchName">
+            </form>
+        </div>
+        <p class="title">My fighter!</p>
+        <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Breed" name="query" id="searchBreed">
+            </form>
+        </div>
+    </div>
 
     <main>
         <div id="content">
@@ -44,6 +46,10 @@
                 <button id="randomizeBtn">Randomize</button>
 
                 <button id="battleBtn">Battle!</button>
+          //Reroute things in js if we can no longer call old id's.
+               // <button id="btn randomBtn">Randomize</button>
+
+                //<button id="btn fightBtn">FIGHT</button>
 
                 <button id="pastBtn">Past Battles</button>
             </div>

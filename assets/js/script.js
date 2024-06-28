@@ -115,7 +115,35 @@ function convertDogNameRD(){
    }
   rightDogImage()
 }
+fetch('https://dogapi.dog/api/v2/breeds')
+  .then(response => response.json())
+  .then(data => {
+    data.data.forEach(breed => {
+      console.log(breed)
+        const name = breed.attributes.name;
+      const weightmax = breed.attributes.male_weight.max;
+     const weightmin = breed.attributes.male_weight.min;
+      const lifespanmax = breed.attributes.life.max;
+      const lifespanmin = breed.attributes.life.min;
+     
+   
+
+     console.log(`Name: ${name}, Weight: ${weightmax}, Lifespan: ${lifespanmax},`);
+    });
+  })
+
+ //.catch(error => console.error('Error fetching data:', error));
+
+
+ 
+    function rollDice() {
+        // Generate a randometween 1 and 6
+        const diceRoll = Math.floor(Math.random() * 6) + 1;
+        // Display the result in the console
+        console.log("You rolled a " + diceRoll);
+    }
 function convertDogNameLD(){
+
     
     if(ld.name === "Caucasian Shepherd Dog"){
        ld.name = "ovcharka/caucasian";
@@ -159,7 +187,50 @@ function convertDogNameLD(){
 //Creating cards for left and right side of screen, user and cpu.
 randomBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
+  createCard();
     // console.log(dogsArray);
+});
+    function fetchRandomDoggo()
+     {
+        fetch('https://dogapi.dog/api/v2/breeds')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+                if (data && data.data.length > 0) {
+                    // Selecting a random object from the array
+                    const randomIndex = Math.floor(Math.random() * data.data.length);
+                   // console.log(data.data.length)
+                    const randomObject = data.data[randomIndex];
+                    
+console.log(randomIndex)
+
+console.log(randomObject)
+                   
+                    console.log(`Display data ${randomIndex}`);
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch(error => console.error('Error fetching or processing data:', error));
+
+            
+    };
+    // Call the function to fetch and log a random dog 
+    fetchRandomDoggo()
+        
+
+//For popup at end of battle.
+function createCard() {
+    const popup = $('<div>')
+        .addClass('card task-card my-3')
+        .attr('data-task-id', breed);
+    const cardHeader = $('<div>').addClass('card-header h4').text(breed.value);
+    const cardBody = $('<div>').addClass('card-body');
 
     rd = dogsArray[(Math.floor(Math.random() * dogsArray.length))];
     console.log(rd);
@@ -318,3 +389,4 @@ function finalBattle() {
 fetchDog()
 
 //Call the function to roll the dice
+
