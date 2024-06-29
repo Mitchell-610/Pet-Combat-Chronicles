@@ -377,7 +377,6 @@ function winLoss() {
     // Display the modal
     modal.style.display = 'block';
   }
-popUpCard();
 }
 
 battleBtn.addEventListener("click", finalBattle);
