@@ -320,15 +320,82 @@ function totallifeRD() {
   //             console.log(`these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`)
 }
 
-//For popup at end of battle.
-function popUpCard() {}
+function winLoss() {
+  if (ldFinalScore >= rdFinalScore) {
+    winner.push(ldFinalScore);
+    console.log(yourDogFact);
+    console.log("YOU WIN!");
 
-//To close popup at end of battle.
-function closeCard(event) {
-  event.preventDefault();
+    var modal = document.createElement('div');
+    var modalContent = document.createElement('div');
+    var closeBtn = document.createElement('span');
+    var cardContent = document.createElement('p');
 
-  if (close === true) {
-    return;
+    // Assign classes and styles to the elements
+    modal.className = 'modal';
+    modalContent.className = 'modal-content';
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;'; // × symbol for close button
+    cardContent.textContent = yourDogFact.join(', '); // Convert array to string
+
+    // Append elements to build the modal structure
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(cardContent);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Close modal when close button is clicked
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    // Close modal when user clicks outside of it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Display the modal
+    modal.style.display = 'block';
+
+  } else {
+    winner.push(rdFinalScore);
+    console.log("YOU LOSE!");
+    console.log(cpuDogFact);
+
+    var modal = document.createElement('div');
+    var modalContent = document.createElement('div');
+    var closeBtn = document.createElement('span');
+    var cardContent = document.createElement('p');
+
+    // Assign classes and styles to the elements
+    modal.className = 'modal';
+    modalContent.className = 'modal-content';
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;'; // × symbol for close button
+    cardContent.textContent = cpuDogFact.join(', '); // Convert array to string
+
+    // Append elements to build the modal structure
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(cardContent);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Close modal when close button is clicked
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    // Close modal when user clicks outside of it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Display the modal
+    modal.style.display = 'block';
   }
 }
 
