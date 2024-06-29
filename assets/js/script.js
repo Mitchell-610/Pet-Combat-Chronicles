@@ -11,6 +11,7 @@ let rd;
 let ld;
 let winner = [];
 
+console.log("hi")
 
 function fetchImage(dogName) {
   console.log(dogName);
