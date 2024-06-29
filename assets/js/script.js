@@ -8,6 +8,8 @@ let cpuDogFact = [];
 let yourDogFact = [];
 let rd;
 let ld;
+let winner = [];
+let winnersFact = [];
 
 function fetchImage(dogName) {
   console.log(dogName);
@@ -201,6 +203,7 @@ fetchRandomDoggo();
 //For popup at end of battle.
 function createCard() {
   rd = dogsArray[Math.floor(Math.random() * dogsArray.length)];
+
   console.log(rd);
   let rdn = rd.name;
   console.log(rdn);
@@ -215,6 +218,7 @@ function createCard() {
   console.log(cpuDogFact);
 
   ld = dogsArray[Math.floor(Math.random() * dogsArray.length)];
+  
   console.log(ld);
   let ldn = ld.name;
   console.log(ldn);
@@ -245,13 +249,11 @@ function createCard() {
   console.log(yourDogFact);
   //Appending it to screen in code below.
   let rightDog = document.getElementById(`rightDog`);
-  console.log(rightDog);
 
   rightDog.children[0].textContent = rdn;
   //Tie in photo here.
 
   let leftDog = document.getElementById(`leftDog`);
-  console.log(leftDog);
 
   leftDog.children[0].textContent = ldn;
   //Tie in photo here.
@@ -300,25 +302,81 @@ function totallifeRD() {
   //             console.log(`these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`)
 }
 
-//For popup at end of battle.
-function popUpCard() {}
-
-//To close popup at end of battle.
-function closeCard(event) {
-  event.preventDefault();
-
-  if (close === true) {
-    return;
-  }
-}
-
 function winLoss() {
   if (ldFinalScore >= rdFinalScore) {
-    console.log("you win!");
+    winner.push(ldFinalScore);
+    console.log(yourDogFact);
+    console.log("YOU WIN!");
+
+    var modal = document.createElement('div');
+    var modalContent = document.createElement('div');
+    var closeBtn = document.createElement('span');
+    var cardContent = document.createElement('p');
+
+    // Assign classes and styles to the elements
+    modal.className = 'modal';
+    modalContent.className = 'modal-content';
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;'; // × symbol for close button
+    cardContent.textContent = yourDogFact;
+
+    // Append elements to build the modal structure
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(cardContent);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Close modal when close button is clicked
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Display the modal
+    modal.style.display = 'block';
+
   } else {
+    winner.push(rdFinalScore);
     console.log("YOU LOSE!");
-  }
-}
+    console.log(cpuDogFact);
+    var modal = document.createElement('div');
+    var modalContent = document.createElement('div');
+    var closeBtn = document.createElement('span');
+    var cardContent = document.createElement('p');
+
+    // Assign classes and styles to the elements
+    modal.className = 'modal';
+    modalContent.className = 'modal-content';
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;'; // × symbol for close button
+    cardContent.textContent = cpuDogFact;
+
+    // Append elements to build the modal structure
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(cardContent);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Close modal when close button is clicked
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Display the modal
+    modal.style.display = 'block';
 
 battleBtn.addEventListener("click", finalBattle);
 
