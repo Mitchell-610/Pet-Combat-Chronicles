@@ -40,27 +40,36 @@ header {
     align-items: center;
 }
 
-.search-container {
+.search-container { 
     display: flex;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #72c2a5; 
+    color: black; 
 }
 
-.search-container input[type="text"] {
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.search-container button {
+    font-size: 14px; 
+    border-radius: 8px;
+    background-color: #D9D0CE; 
+    color: black; 
+    cursor: pointer; 
 }
+
+.search-container button:hover {
+    background-color: #5a9e82; 
+} 
 
 footer {
     text-align: center;
     font-size: 150%;
     background-color: #72c2a5;
     color: black;
-    /* margin-top: auto;
-    padding: 5px;
-    min-height: 25vh;
-    display: flex;
-    flex-direction: column; */
+    position: fixed;  /* Fix the footer to the screen */
+    bottom: 0;  /* Align it to the bottom of the screen */
+    width: 100%;  /* Make it span the entire width */
+    padding: 10px 0;  /* Adjust padding as needed */
 }
 
 .contentBtn {
@@ -73,7 +82,7 @@ footer {
 }
 
 .contentBtn button {
-    font-size: 18px; 
+    font-size: 24px; 
     padding: 45px 60px; /* Make the buttons bigger */
     border: none;
     border-radius: 8px;
@@ -108,6 +117,8 @@ main {
     align-items: center;
     width: 100%;
     font-size: 20px;
+    position: fixed; /* Fix the content to the screen */
+    bottom: 50px; /* Align it to the bottom of the screen */
 }
 
 #leftDog, #rightDog {

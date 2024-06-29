@@ -12,7 +12,7 @@ let winner = [];
 let winnersFact = [];
 
 function fetchImage(dogName) {
-  //console.log(dogName);
+  console.log(dogName);
 }
 
 function fetchDog() {
@@ -184,9 +184,9 @@ function fetchRandomDoggo() {
         // console.log(data.data.length)
         const randomObject = data.data[randomIndex];
 
-        //console.log(randomIndex);
+        console.log(randomIndex);
 
-        //console.log(randomObject);
+        console.log(randomObject);
 
         console.log(`Display data ${randomIndex}`);
       } else {
@@ -203,7 +203,8 @@ fetchRandomDoggo();
 //For popup at end of battle.
 function createCard() {
   rd = dogsArray[Math.floor(Math.random() * dogsArray.length)];
-  //console.log(rd);
+
+  console.log(rd);
   let rdn = rd.name;
   console.log(rdn);
   let rdw = rd.dogWeight;
@@ -217,10 +218,10 @@ function createCard() {
   console.log(cpuDogFact);
 
   ld = dogsArray[Math.floor(Math.random() * dogsArray.length)];
-  //console.log(ld);
+  
+  console.log(ld);
   let ldn = ld.name;
   console.log(ldn);
-
   let ldw = ld.dogWeight;
   console.log(ldw);
   let ldh = ld.dogHypo;
@@ -376,8 +377,6 @@ function winLoss() {
 
     // Display the modal
     modal.style.display = 'block';
-  }
-}
 
 battleBtn.addEventListener("click", finalBattle);
 
