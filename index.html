@@ -20,26 +20,29 @@
 
     <div id="textBox">
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Name" name="query" id="searchName">
-            </form>
+            <div class="random-word-box">
+                <p id="random-words-left"></p>
+                <button onclick="displayRandomWords('random-words-left')">Generate YOUR Dog's Name</button>
+            </div>
+
         </div>
         <p class="title">My fighter!</p>
         <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Breed" name="query" id="searchBreed">
-            </form>
+
+            <div class="random-word-box">
+                <p id="random-words-right"></p>
+                <button onclick="displayRandomWords('random-words-right')">Generate CPU Dog's Name</button>
+            </div>
         </div>
     </div>
+</head>
 
+<body>
     <main>
         <div id="content">
             <section id="leftDog">
-                <h2></h2>
-                <p></p>
-                <p></p>
-                <p></p>
+                <img src="https://img.freepik.com/free-vector/v60-pla-kala-13b-animals_53876-36870.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1716854400&semt=ais_user" alt="Left Dog" class="dog-image" id="leftDogImage">
             </section>
             
             <div class="contentBtn">
@@ -51,25 +54,25 @@
 
                 //<button id="btn fightBtn">FIGHT</button> -->
 
-                <button id="pastBtn">Past Battles</button>
             </div>
 
             <section id="rightDog">
-                <h2></h2>
-                <p></p>
-                <p></p>
-                <p></p>
+                <img src="https://img.freepik.com/free-vector/v60-pla-kala-03-animals_53876-36864.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719187200&semt=ais_user" alt="Right Dog" class="dog-image" id="rightDogImage">
             </section>
 
         </div>
     </main>
 
-
     <footer>
         <p>&copy; 2024 </p>
     </footer>
     <script src="./assets/js/script.js"></script>
-
+    <img id="leftDogImage" alt="Left Dog Image">
+    <img id="rightDogImage" alt="Right Dog Image">
 </body>
 
 </html>
+
+
+
+
