@@ -18,46 +18,50 @@
         <a id="page-header">⚔️🏰⚜Pet Combat Chronicles⚜⚔️🤺</a>
     </header>
 
-    <div id="textBox">
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Name" name="query" id="searchName">
-            </form>
-        </div>
-        <p class="title">My fighter!</p>
-        <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Breed" name="query" id="searchBreed">
-            </form>
-        </div>
-    </div>
+        <div id="textBox">
+            <div class="search-container">
+                <div class="random-word-box">
+                    <p id="random-words-left"></p>
+                    <button onclick="displayRandomWords('random-words-left')">Generate YOUR Dog's Name</button>
+                </div>
 
-    <main>
-        <div id="content">
-            <section id="leftDog">
-                <img src="https://placehold.co/400" alt="Left Dog" class="dog-image" id="leftDogImage">
-            </section>
-            
-            <div class="contentBtn">
-                <button id="randomizeBtn">Randomize</button>
+            </div>
+            <p class="title">My fighter!</p>
+            <img src="./assets/banner.png" alt="Medieval Banner" class="banner">
+            <div class="search-container">
 
-                <button id="battleBtn">Battle!</button>
-          <!-- //Reroute things in js if we can no longer call old id's.
+                <div class="random-word-box">
+                    <p id="random-words-right"></p>
+                    <button onclick="displayRandomWords('random-words-right')">Generate CPU Dog's Name</button>
+                </div>
+            </div>
+        </div>
+        </head>
+
+        <body>
+            <main>
+                <div id="content">
+                    <section id="leftDog">
+                        <img src="https://placehold.co/400" alt="Left Dog" class="dog-image" id="leftDogImage">
+                    </section>
+
+                    <div class="contentBtn">
+                        <button id="randomizeBtn">Randomize</button>
+
+                        <button id="battleBtn">Battle!</button>
+                        <!-- //Reroute things in js if we can no longer call old id's.
                // <button id="btn randomBtn">Randomize</button>
 
                 //<button id="btn fightBtn">FIGHT</button> -->
 
-                <button id="pastBtn">Past Battles</button>
-            </div>
+                    </div>
 
-            <section id="rightDog">
-                <img src="https://placehold.co/400" alt="Right Dog" class="dog-image" id="rightDogImage">
-            </section>
+                    <section id="rightDog">
+                        <img src="https://placehold.co/400" alt="Right Dog" class="dog-image" id="rightDogImage">
+                    </section>
 
-        </div>
+                </div>
     </main>
-
 
     <footer>
         <p>&copy; 2024 </p>
