@@ -9,6 +9,8 @@ let cpuDogFact = [];
 let yourDogFact = [];
 let rd;
 let ld;
+let winner = [];
+
 
 function fetchImage(dogName) {
   console.log(dogName);
@@ -399,13 +401,76 @@ function winLoss() {
   }
 }
 
+
 function winLoss() {
-  if (ldFinalScore >= rdFinalScore) {
-    console.log("you win!");
-  } else {
-    console.log("YOU LOSE!");
+    battleBtn.addEventListener("click", finalBattle);
+    if (ldFinalScore >= rdFinalScore) {
+      winner.push(ldFinalScore);
+      console.log(yourDogFact);
+      console.log("YOU WIN!");
+  
+      var modal = document.createElement('div');
+      var modalContent = document.createElement('div');
+      var closeBtn = document.createElement('span');
+      var cardContent = document.createElement('p');
+  
+      modal.className = 'modal';
+      modalContent.className = 'modal-content';
+      closeBtn.className = 'close-btn';
+      closeBtn.innerHTML = '&times;';
+      cardContent.textContent = yourDogFact.join(', ');
+  
+      modalContent.appendChild(closeBtn);
+      modalContent.appendChild(cardContent);
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+  
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      }
+  
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      }
+  
+      modal.style.display = 'block';
+  
+    } else {
+      winner.push(rdFinalScore);
+      console.log("YOU LOSE!");
+      console.log(cpuDogFact);
+  
+      var modal = document.createElement('div');
+      var modalContent = document.createElement('div');
+      var closeBtn = document.createElement('span');
+      var cardContent = document.createElement('p');
+  
+      modal.className = 'modal';
+      modalContent.className = 'modal-content';
+      closeBtn.className = 'close-btn';
+      closeBtn.innerHTML = '&times;';
+      cardContent.textContent = cpuDogFact.join(', ');
+  
+      modalContent.appendChild(closeBtn);
+      modalContent.appendChild(cardContent);
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+  
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      }
+  
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      }
+  
+      modal.style.display = 'block';
+    }
   }
-}
 
 battleBtn.addEventListener("click", finalBattle);
 
