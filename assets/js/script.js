@@ -10,12 +10,15 @@ let yourDogFact = [];
 let rd;
 let ld;
 let winner = [];
+let winnersFact = [];
 
 console.log("hi")
 
 function fetchImage(dogName) {
   console.log(dogName);
 }
+
+console.log(fetchImage);
 
 function fetchDog() {
   fetch("https://dogapi.dog/api/v2/breeds")
@@ -65,7 +68,6 @@ function leftDogImage() {
     .then((response) => response.json())
     .then((data) => {
       console.log("Image api data left dog", data);
-      
         const ldimageUrl = data.message;
         // Get the img element by id and set the src attribute to the image URL
         document.getElementById('leftDogImage').src = ldimageUrl;
@@ -148,6 +150,8 @@ function rollDice() {
   // Display the result in the console
   console.log("You rolled a " + diceRoll);
 }
+
+
 function convertDogNameLD() {
   if (ld.name === "Caucasian Shepherd Dog") {
     ld.name = "ovcharka/caucasian";
@@ -323,155 +327,69 @@ function totallifeRD() {
   //             console.log(`these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`)
 }
 
-function winLoss() {
-  if (ldFinalScore >= rdFinalScore) {
-    winner.push(ldFinalScore);
-    console.log(yourDogFact);
-    console.log("YOU WIN!");
+function modal() {
+  var modal = document.createElement('div');
+  var modalContent = document.createElement('div');
+  var closeBtn = document.createElement('span');
+  var cardContent = document.createElement('p');
+  
+  // Assign classes and styles to the elements
+  modal.className = 'modal';
+  modalContent.className = 'modal-content';
+  closeBtn.className = 'close-btn';
+  closeBtn.innerHTML = '&times;'; // × symbol for close button
 
-    var modal = document.createElement('div');
-    var modalContent = document.createElement('div');
-    var closeBtn = document.createElement('span');
-    var cardContent = document.createElement('p');
-
-    // Assign classes and styles to the elements
-    modal.className = 'modal';
-    modalContent.className = 'modal-content';
-    closeBtn.className = 'close-btn';
-    closeBtn.innerHTML = '&times;'; // × symbol for close button
-    cardContent.textContent = yourDogFact.join(', '); // Convert array to string
-
-    // Append elements to build the modal structure
-    modalContent.appendChild(closeBtn);
-    modalContent.appendChild(cardContent);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    // Close modal when close button is clicked
-    closeBtn.onclick = function() {
-      modal.style.display = 'none';
-    }
-
-    // Close modal when user clicks outside of it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    }
-
-    // Display the modal
-    modal.style.display = 'block';
-
+  if (winnersFact.length > 0) {
+    cardContent.textContent = winnersFact[winnersFact.length - 1]; // Display the last fact
   } else {
-    winner.push(rdFinalScore);
-    console.log("YOU LOSE!");
-    console.log(cpuDogFact);
+    cardContent.textContent = "No winner's fact available."; // Default message if no facts
+  } 
+   // Append elements to build the modal structure
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(cardContent);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
 
-    var modal = document.createElement('div');
-    var modalContent = document.createElement('div');
-    var closeBtn = document.createElement('span');
-    var cardContent = document.createElement('p');
+  // Close modal when close button is clicked
+  closeBtn.onclick = function () {
+    modal.style.display = 'none';
+    winnersFact.length = 0;
+    //console.log(winnersFact);
 
-    // Assign classes and styles to the elements
-    modal.className = 'modal';
-    modalContent.className = 'modal-content';
-    closeBtn.className = 'close-btn';
-    closeBtn.innerHTML = '&times;'; // × symbol for close button
-    cardContent.textContent = cpuDogFact.join(', '); // Convert array to string
-
-    // Append elements to build the modal structure
-    modalContent.appendChild(closeBtn);
-    modalContent.appendChild(cardContent);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    // Close modal when close button is clicked
-    closeBtn.onclick = function() {
-      modal.style.display = 'none';
-    }
-
-    // Close modal when user clicks outside of it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    }
-
-    // Display the modal
-    modal.style.display = 'block';
   }
-}
+
+  // Close modal when user clicks outside of it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+      winnersFact.length = 0;
+      //console.log(winnersFact);
+
+
+    }
+  }
+  // Display the modal
+  modal.style.display = 'block';
+  //console.log(winnersFact);
+};
 
 
 function winLoss() {
-    battleBtn.addEventListener("click", finalBattle);
-    if (ldFinalScore >= rdFinalScore) {
-      winner.push(ldFinalScore);
-      console.log(yourDogFact);
-      console.log("YOU WIN!");
-  
-      var modal = document.createElement('div');
-      var modalContent = document.createElement('div');
-      var closeBtn = document.createElement('span');
-      var cardContent = document.createElement('p');
-  
-      modal.className = 'modal';
-      modalContent.className = 'modal-content';
-      closeBtn.className = 'close-btn';
-      closeBtn.innerHTML = '&times;';
-      cardContent.textContent = yourDogFact.join(', ');
-  
-      modalContent.appendChild(closeBtn);
-      modalContent.appendChild(cardContent);
-      modal.appendChild(modalContent);
-      document.body.appendChild(modal);
-  
-      closeBtn.onclick = function() {
-        modal.style.display = 'none';
+      if (ldFinalScore >= rdFinalScore) {
+        winner.push(ldFinalScore);
+        //console.log(yourDogFact);
+        console.log("YOU WIN!");
+        winnersFact = winnersFact.concat(yourDogFact);
+        modal();
+    
+      } else {
+        winner.push(rdFinalScore);
+        console.log("YOU LOSE!");
+        //console.log(cpuDogFact);
+        winnersFact = winnersFact.concat(cpuDogFact);
+        modal();
       }
-  
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = 'none';
-        }
-      }
-  
-      modal.style.display = 'block';
-  
-    } else {
-      winner.push(rdFinalScore);
-      console.log("YOU LOSE!");
-      console.log(cpuDogFact);
-  
-      var modal = document.createElement('div');
-      var modalContent = document.createElement('div');
-      var closeBtn = document.createElement('span');
-      var cardContent = document.createElement('p');
-  
-      modal.className = 'modal';
-      modalContent.className = 'modal-content';
-      closeBtn.className = 'close-btn';
-      closeBtn.innerHTML = '&times;';
-      cardContent.textContent = cpuDogFact.join(', ');
-  
-      modalContent.appendChild(closeBtn);
-      modalContent.appendChild(cardContent);
-      modal.appendChild(modalContent);
-      document.body.appendChild(modal);
-  
-      closeBtn.onclick = function() {
-        modal.style.display = 'none';
-      }
-  
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = 'none';
-        }
-      }
-  
-      modal.style.display = 'block';
-    }
-  }
+    };
 
 battleBtn.addEventListener("click", finalBattle);
 
@@ -479,9 +397,9 @@ function finalBattle() {
   totallifeLD();
   totallifeRD();
 
-  console.log(
-    `these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`
-  );
+  //console.log(
+  //  `these are our competing final scores, My dog:, ${ldFinalScore} CPU Dog: ${rightDogUniversalscore}`
+  //);
   winLoss();
 }
 

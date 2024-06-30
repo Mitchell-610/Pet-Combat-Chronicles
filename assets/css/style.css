@@ -133,7 +133,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 150px; 
+    margin: 150px;
 }
 
 .dog-image {
@@ -176,4 +176,7 @@ main {
     text-decoration: none;
     cursor: pointer;
   }
+
+
+
   
