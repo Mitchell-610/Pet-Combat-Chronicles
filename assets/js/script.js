@@ -11,6 +11,7 @@ let rd;
 let ld;
 let winner = [];
 let winnersFact = [];
+let whoWon = [];
 
 console.log("hi")
 
@@ -331,46 +332,48 @@ function modal() {
   var modal = document.createElement('div');
   var modalContent = document.createElement('div');
   var closeBtn = document.createElement('span');
+  var ww = document.createElement(`p`)
   var cardContent = document.createElement('p');
-  
   // Assign classes and styles to the elements
   modal.className = 'modal';
   modalContent.className = 'modal-content';
   closeBtn.className = 'close-btn';
   closeBtn.innerHTML = '&times;'; // × symbol for close button
-
   if (winnersFact.length > 0) {
     cardContent.textContent = winnersFact[winnersFact.length - 1]; // Display the last fact
   } else {
     cardContent.textContent = "No winner's fact available."; // Default message if no facts
   } 
+
+  if (whoWon.length > 0) {
+    ww.textContent = whoWon[whoWon.length - 1]; // Display the last fact
+  } else {
+    ww.textContent = "No winner available."; // Default message if no facts
+  } 
+
+
    // Append elements to build the modal structure
   modalContent.appendChild(closeBtn);
+  modalContent.appendChild(ww);
   modalContent.appendChild(cardContent);
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
-
   // Close modal when close button is clicked
   closeBtn.onclick = function () {
     modal.style.display = 'none';
     winnersFact.length = 0;
     //console.log(winnersFact);
-
   }
-
   // Close modal when user clicks outside of it
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = 'none';
       winnersFact.length = 0;
       //console.log(winnersFact);
-
-
     }
   }
   // Display the modal
   modal.style.display = 'block';
-  //console.log(winnersFact);
 };
 
 
@@ -378,12 +381,18 @@ function winLoss() {
       if (ldFinalScore >= rdFinalScore) {
         winner.push(ldFinalScore);
         //console.log(yourDogFact);
+        let youWin = (`YOU WIN!`);
+        whoWon.push(youWin);
+
         console.log("YOU WIN!");
         winnersFact = winnersFact.concat(yourDogFact);
         modal();
     
       } else {
         winner.push(rdFinalScore);
+        let cpuWin = (`YOU LOSE!`);
+        whoWon.push(cpuWin);
+
         console.log("YOU LOSE!");
         //console.log(cpuDogFact);
         winnersFact = winnersFact.concat(cpuDogFact);
@@ -472,3 +481,4 @@ function displayRandomWords(elementId) {
 
 fetchDog();
 
+console.log(whoWon);
