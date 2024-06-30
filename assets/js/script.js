@@ -332,7 +332,8 @@ function modal() {
   var modal = document.createElement('div');
   var modalContent = document.createElement('div');
   var closeBtn = document.createElement('span');
-  var ww = document.createElement(`p`)
+  var ff = document.createElement(`p`)
+  var ww = document.createElement(`p`);
   var cardContent = document.createElement('p');
   // Assign classes and styles to the elements
   modal.className = 'modal';
@@ -350,11 +351,13 @@ function modal() {
   } else {
     ww.textContent = "No winner available."; // Default message if no facts
   } 
+  ff.textContent = `A fun fact about the winner is.`
 
 
    // Append elements to build the modal structure
   modalContent.appendChild(closeBtn);
   modalContent.appendChild(ww);
+  modalContent.appendChild(ff);
   modalContent.appendChild(cardContent);
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
@@ -383,7 +386,6 @@ function winLoss() {
         //console.log(yourDogFact);
         let youWin = (`YOU WIN!`);
         whoWon.push(youWin);
-
         console.log("YOU WIN!");
         winnersFact = winnersFact.concat(yourDogFact);
         modal();
@@ -392,7 +394,6 @@ function winLoss() {
         winner.push(rdFinalScore);
         let cpuWin = (`YOU LOSE!`);
         whoWon.push(cpuWin);
-
         console.log("YOU LOSE!");
         //console.log(cpuDogFact);
         winnersFact = winnersFact.concat(cpuDogFact);
