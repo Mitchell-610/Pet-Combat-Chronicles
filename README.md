@@ -35,7 +35,7 @@ WHEN I dismiss the fact about the winning dog THEN I can randomize and battle al
 Special thanks to our TA's Mateo Wallace & Mark Alfano for giving us support. Last but not least, to our instructor Darian Mendez for teaching us everything we know.
 
 ## Collaborators
-1. Dennis Heitt = https://github.com/Mitchell-610
+1. Dennis Heit = https://github.com/Mitchell-610
 2. Elisse Gomez - https://github.com/elissegomez24
 3. Erin Spix - https://github.com/erinspix
 4. Rubyann Baibo - https://github.com/rubyannB
