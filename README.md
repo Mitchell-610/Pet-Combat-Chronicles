@@ -35,25 +35,13 @@ WHEN I dismiss the fact about the winning dog THEN I can randomize and battle al
 Special thanks to our TA's Mateo Wallace & Mark Alfano for giving us support. Last but not least, to our instructor Darian Mendez for teaching us everything we know.
 
 ## Collaborators
-1. Dennis Heitt = https://github.com/Mitchell-610
+1. Dennis Heit = https://github.com/Mitchell-610
 2. Elisse Gomez - https://github.com/elissegomez24
 3. Erin Spix - https://github.com/erinspix
 4. Rubyann Baibo - https://github.com/rubyannB
 5. Susana Soto - https://github.com/ssoto83
 
 ## URL
-https://github.com/Mitchell-610/Pet-Combat-Chronicles
+https://Mitchell-610/Pet-Combat-Chronicles
 
-GIVEN the Pet Combat Chronicles webpage
-
-WHEN I click on randomize based on a RNG 
-THEN I am assigned with a dog to battle & the cpu is assigned a dog to battle .
-
-
-WHEN I click on “battle”
-THEN the user will receive battle boost based on a back end dice roll, as well as the cpu.
-Whoever has the higher stats wins the battle
-
-WHEN i finish a battle
-THEN I will see a fact about the winning dog
 
