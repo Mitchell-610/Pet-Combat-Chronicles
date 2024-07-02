@@ -9,16 +9,6 @@ html {
     font-size: 65px;
 }
 
-.title {
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    margin: 10px 0;
-    text-align: center; 
-    position: absolute;
-    z-index: 1; 
-} 
-
 /* Absolute positioning */
 .banner {
     position: relative;
@@ -191,4 +181,8 @@ main {
     }
 }
 
-  
+@media screen and (max-width: 580px) {
+    header {
+        margin-bottom: 10%;
+    }
+}
