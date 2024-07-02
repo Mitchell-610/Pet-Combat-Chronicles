@@ -177,6 +177,18 @@ main {
     cursor: pointer;
   }
 
-
+  @media screen and (max-width: 800px) {
+    #content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+  
+@media screen and (max-width: 580px) {
+    #textBox {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
   
